@@ -1,4 +1,18 @@
-import streamlit as st
+# API Key 설정 (로컬/클라우드 호환 모드)
+api_key = ""
+
+# 1. 시크릿 파일이 있는지 먼저 확인 (에러 방지)
+try:
+    if 'ORS_KEY' in st.secrets:
+        api_key = st.secrets['ORS_KEY']
+except FileNotFoundError:
+    pass  # 로컬에 파일이 없으면 그냥 넘어감
+except Exception:
+    pass
+
+# 2. 자동으로 가져온 키가 없으면 입력창 표시
+if not api_key:
+    api_key = st.sidebar.text_input("API Key (직접 입력)", type="password")import streamlit as st
 import openrouteservice
 import folium
 from streamlit_folium import st_folium
@@ -175,4 +189,5 @@ if st.session_state['calculated']:
             st_folium(m, width=1000, height=500, returned_objects=[])
             
         except Exception as e:
+
             st.error(f"오류 발생: {e}")
