@@ -15,7 +15,7 @@ LOCATIONS = {
     "[KH] Phnom Penh (프놈펜/수도)": (104.9282, 11.5564),
     "[KH] Sihanoukville (시아누크빌/메인항구)": (103.5299, 10.6253),
     "[KH] Siem Reap (씨엠립)": (103.8552, 13.3633),
-    "[KH] Battambang (바탐방)": (103.0605, 13.0957),
+    "[KH] Battambang (바탐방)": (103.2023, 13.0972),
     "[KH] Kampot (캄포트)": (104.1819, 10.6148),
     "[KH] Kratie (크라체)": (106.0167, 12.4886),
     "[KH] Stung Treng (스퉁트렝)": (105.9699, 13.5258),
@@ -172,3 +172,4 @@ if st.session_state['calculated']:
 
         except Exception as e:
             st.error(f"경로 계산 중 오류가 발생했습니다: {e}")
+
